@@ -18,6 +18,7 @@ BuildRequires: gettext-devel
 BuildRequires: libsm-devel
 BuildRequires: libnotify-devel
 BuildRequires: autoconf2.5
+BuildRequires: intltool
 Requires:      pidgin
 
 Obsoletes:     %{oldname}
