@@ -1,4 +1,4 @@
-%define version 0.12
+%define version 0.13
 %define release %mkrel 1
 %define oldname gaim-libnotify
 
@@ -9,8 +9,7 @@ Release:       %{release}
 License:       GPL
 Group:         Networking/Instant messaging
 URL:           http://gaim-libnotify.sourceforge.net/
-Source:        http://prdownloads.sourceforge.net/%{oldname}/%{oldname}-%{version}.tar.bz2
-Patch:         pidgin.diff
+Source:        http://prdownloads.sourceforge.net/%{oldname}/%{name}-%{version}.tar.bz2
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: pidgin-devel
 BuildRequires: gtk2-devel
@@ -34,11 +33,9 @@ libnotify and notify-daemon aren't stable yet, so it's all very experimental.
 Don't forget to enable the plugin in Tools->Plugins.
 
 %prep
-%setup -q -n %{oldname}-%{version}
-%patch -p0 -b .pidgin
+%setup -q
 
 %build
-autoreconf
 %configure2_5x --disable-deprecated
 %make
 
