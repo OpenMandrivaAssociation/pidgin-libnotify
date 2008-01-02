@@ -12,6 +12,7 @@ URL:           http://gaim-libnotify.sourceforge.net/
 Source:        http://prdownloads.sourceforge.net/%{oldname}/%{name}-%{version}.tar.bz2
 Patch0:        01-only_available.patch
 Patch1:        02-fix_show_button.patch
+BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: pidgin-devel
 BuildRequires: gtk2-devel
 BuildRequires: gettext-devel
