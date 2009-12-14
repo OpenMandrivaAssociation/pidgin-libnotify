@@ -1,5 +1,5 @@
 %define version 0.14
-%define release %mkrel 2
+%define release %mkrel 3
 %define oldname gaim-libnotify
 
 Summary:       Popup for Pidgin via libnotify and the notification-daemon
@@ -10,13 +10,14 @@ License:       GPL
 Group:         Networking/Instant messaging
 URL:           http://gaim-libnotify.sourceforge.net/
 Source:        http://prdownloads.sourceforge.net/%{oldname}/%{name}-%{version}.tar.bz2
-Patch1:        02-fix_show_button.patch
+Patch1:        indicate.patch
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: pidgin-devel
 BuildRequires: gtk2-devel
 BuildRequires: gettext-devel
 BuildRequires: libsm-devel
 BuildRequires: libnotify-devel
+BuildRequires: libindicate-devel
 BuildRequires: autoconf2.5
 BuildRequires: intltool
 Requires:      pidgin
@@ -35,7 +36,8 @@ Don't forget to enable the plugin in Tools->Plugins.
 
 %prep
 %setup -q
-%patch1 -p1
+%apply_patches
+libtoolize --copy --force; aclocal; autoconf --force
 
 %build
 %configure2_5x --disable-deprecated
