@@ -1,5 +1,5 @@
 %define version 0.14
-%define release %mkrel 3
+%define release %mkrel 4
 %define oldname gaim-libnotify
 
 Summary:       Popup for Pidgin via libnotify and the notification-daemon
@@ -17,7 +17,7 @@ BuildRequires: gtk2-devel
 BuildRequires: gettext-devel
 BuildRequires: libsm-devel
 BuildRequires: libnotify-devel
-BuildRequires: libindicate-devel
+BuildRequires: libindicate-gtk-devel
 BuildRequires: autoconf2.5
 BuildRequires: intltool
 Requires:      pidgin
