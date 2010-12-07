@@ -1,5 +1,5 @@
 %define version 0.14
-%define release %mkrel 4
+%define release %mkrel 5
 %define oldname gaim-libnotify
 
 Summary:       Popup for Pidgin via libnotify and the notification-daemon
