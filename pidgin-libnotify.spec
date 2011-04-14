@@ -1,5 +1,5 @@
 %define version 0.14
-%define release %mkrel 5
+%define release %mkrel 6
 %define oldname gaim-libnotify
 
 Summary:       Popup for Pidgin via libnotify and the notification-daemon
@@ -37,9 +37,9 @@ Don't forget to enable the plugin in Tools->Plugins.
 %prep
 %setup -q
 %apply_patches
-libtoolize --copy --force; aclocal; autoconf --force
 
 %build
+autoreconf -fi
 %configure2_5x --disable-deprecated
 %make
 
