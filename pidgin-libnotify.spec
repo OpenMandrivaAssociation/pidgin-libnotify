@@ -36,7 +36,7 @@ Don't forget to enable the plugin in Tools->Plugins.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 autoreconf -fi
